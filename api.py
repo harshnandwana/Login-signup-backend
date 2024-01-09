@@ -22,12 +22,7 @@ app = FastAPI()
 origins = [
     # Add the list of allowed origins (domains) here
     # For example, for all origins, you can use "*"
-    "https://app.sdronsteroids.com",
-    "http://52.55.231.164",
-    "https://frontend-mvp-1.vercel.app",
-    "https://steroid.vercel.app",
-    "https://sdronsteriods.vercel.app",
-    "http://localhost:5173"  # Replace with the actual frontend URL
+    # Replace with the actual frontend URL
 ]
 
 app.add_middleware(
@@ -39,13 +34,13 @@ app.add_middleware(
 )
 
 # MongoDB Configuration
-MONGO_URI = "mongodb+srv://apple:ojtCIYjodVpqheAW@mumbai.u7junmf.mongodb.net/"
+MONGO_URI = ""
 client = pymongo.MongoClient(MONGO_URI)
 db = client["login"]
 users_collection = db["users"]
 
 # Security Configurations
-SECRET_KEY = "bf0a2804e7275519e8abadbdcb5dd0aed97f13d369ec1dae7dc689290e7f4702"
+SECRET_KEY = "ed97f13d369ec1dae7dc689290e7f4702"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 300
 
@@ -89,8 +84,8 @@ def generate_random_password(length=12):
 
 
 # Email configuration
-EMAIL_ADDRESS = "swiftstatsai@gmail.com"
-EMAIL_PASSWORD = "amhthlsngttaqgxp"
+EMAIL_ADDRESS = "test@test.com"
+EMAIL_PASSWORD = "pass"
 
 
 
